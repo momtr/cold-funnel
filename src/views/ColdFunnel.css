@@ -1,0 +1,215 @@
+.cold-funnel {
+    margin: 0 auto;
+    max-width: 412px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.footer img {
+    position: absolute;
+    bottom: 0;
+}
+
+.nav {
+    padding: .7rem;
+}
+
+.question {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.question-image {
+    width: 20%;
+    margin: 2.5rem auto;
+}
+
+.question-indicator {
+    font-size: 16px;
+}
+
+.question-headline {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 30px;
+    max-width: 80%;
+    margin: .8rem auto;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 88%;
+    margin: 2.5rem auto;
+    row-gap: .8rem;
+    column-gap: .8rem;
+}
+
+.card {
+    background-color: #FF0460;
+    color: white;
+    border-radius: 12px;
+    width: 48%;
+    animation: card-in 1s;
+}
+
+.card-text {
+    padding: .5rem 1rem 1rem 1rem;
+    font-weight: 700;
+}
+
+.card-image img {
+    border-radius: 12px 12px 0px 0px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 88%;
+    margin: 2.5rem auto;
+}
+
+.form .input {
+    padding: .8rem;
+    flex-direction: row;
+    display: flex;
+    background-color: white;
+}
+
+.form .input input {
+    border: none;
+    font-family: Inter, sans-serif;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+.form .input select {
+    border: none;
+    font-family: Inter, sans-serif;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+option {
+    font-family: Inter, sans-serif;
+    color: #D8D8D8;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+select:focus {
+    outline: none;
+    border: none;
+}
+
+.input-icon {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+}
+
+input::placeholder {
+    color: #c8c8c8;
+    font-weight: 100;
+}
+
+.input-text {
+    text-align: left;
+    line-height: 20px;
+}
+
+.input-top {
+    border: 1.5px solid #ECECEC;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.input-middle {
+    border-left: 1.5px solid #ECECEC;
+    border-right: 1.5px solid #ECECEC;
+}
+
+.input-bottom {
+    border: 1.5px solid #ECECEC;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.input-bottom-w {
+    border-left: 1.5px solid #ECECEC;
+    border-right: 1.5px solid #ECECEC;
+    border-bottom: 1.5px solid #ECECEC;
+    border-radius: 0px 0px 8px 8px;
+}
+
+input[type="checkbox"] {
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.3em !important;
+    height: 1.3em !important;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+}
+
+button {
+    background-color: #FF0460;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: .85rem;
+    font-weight: 700;
+    padding: .9rem 2rem;
+}
+
+button:hover {
+    background-color: #fd73a5;
+}
+
+.form-button {
+    margin-top: 1.6rem;
+    width: 100%;
+}
+
+.form-button button {
+    width: 100%;
+}
+
+.form-disclaimer {
+    margin-top: 2rem;
+}
+
+.finish-text {
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.finish-button {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.finish-button button {
+    width: 80%;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+
+@keyframes card-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
