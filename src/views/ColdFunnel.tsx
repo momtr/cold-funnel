@@ -14,6 +14,7 @@ import s10 from "../assets/images/s10.png";
 import f1 from "../assets/images/f1.png";
 import f2 from "../assets/images/f2.png";
 import React, { useState } from "react";
+import useMountTransition from "../hooks/useMountTransition";
 
 const stages = [
     { 
@@ -65,7 +66,7 @@ const stages = [
         id: "F2",
         top_image: f1, 
         indicator: "Fertig!", 
-        text: "Deine persönliche Case Study befindet sich in deinem E-Mail-Postfach",
+        text: "Deine persönliche Case Study",
         bg: "white" 
     },
     {
@@ -88,7 +89,7 @@ const stages = [
         id: "F4",
         top_image: f2, 
         indicator: "Coffee-Call gebucht ✅", 
-        text: "Agenda für den Coffee-Call:",
+        text: "Für deinen Erfolg.",
         bg: "white" 
     }
 ]
@@ -96,11 +97,15 @@ const stages = [
 
 export default function ColdFunnel() {
     const [stage, setStage] = useState(0);
+    const [isMounted, setIsMounted] = useState(true);
+    const hasTransitionedIn = useMountTransition(isMounted, 1000);
 
     function next() {
+        setIsMounted(false);
         if(stage != stages.length - 1){
             setStage(stage + 1);
         }
+        setInterval(() => setIsMounted(true), 500);
     }
 
     return (
@@ -110,36 +115,38 @@ export default function ColdFunnel() {
                     <img src={logo} alt="Oneup" />
                 </div>
                 <div className="content">
-                    <div className="question">
-                        {stages[stage].top_image && <div className="question-image">
-                            <img src={stages[stage].top_image} width="100%" />
-                        </div>}
-                        <div className="question-indicator">
-                           {stages[stage].indicator}
-                        </div>
-                        <div className="question-headline">
-                            {stages[stage].text}
-                        </div>
-                        {
-                            stages[stage].type === "QUESTION" && <div className="cards">
-                                {stages[stage].answers?.map((answer, id) => (
-                                    <Card key={id} image={answer.image} text={answer.text} onClick={next} />
-                                ))}
+                    {(hasTransitionedIn || isMounted) && (
+                        <div className={`question ${hasTransitionedIn && 'in'} ${isMounted && 'visible'}`}>
+                            {stages[stage].top_image && <div className="question-image">
+                                <img src={stages[stage].top_image} width="100%" />
+                            </div>}
+                            <div className="question-indicator">
+                            {stages[stage].indicator}
                             </div>
-                        }
-                        {
-                            stages[stage].type === "CONTACT_FORM" && <ContactForm onClick={next} />
-                        }
-                        {
-                            stages[stage].type === "FINISH" && <Finish onClick={next} />
-                        }
-                        {
-                            stages[stage].type === "PHONE_FORM" && <PhoneForm stage={stage} onClick={next} />
-                        }
-                        {
-                            stages[stage].type === "FINISH_PHONE" && <FinishPhone />
-                        }
-                    </div>
+                            <div className="question-headline">
+                                {stages[stage].text}
+                            </div>
+                            {
+                                stages[stage].type === "QUESTION" && <div className="cards">
+                                    {stages[stage].answers?.map((answer, id) => (
+                                        <Card key={id} image={answer.image} text={answer.text} onClick={next} />
+                                    ))}
+                                </div>
+                            }
+                            {
+                                stages[stage].type === "CONTACT_FORM" && <ContactForm onClick={next} />
+                            }
+                            {
+                                stages[stage].type === "FINISH" && <Finish onClick={next} />
+                            }
+                            {
+                                stages[stage].type === "PHONE_FORM" && <PhoneForm stage={stage} onClick={next} />
+                            }
+                            {
+                                stages[stage].type === "FINISH_PHONE" && <FinishPhone />
+                            }
+                        </div>
+                    )}
                 </div>
             </div>
             <div className="footer">
@@ -152,7 +159,41 @@ export default function ColdFunnel() {
 function Finish({ ...rest }) {
     return <div className="finish">
         <div className="finish-text">
-            Die Case-Study zeigt dir, wie Du von Funnels profieren könntest und <b>deinen Erfolg steigern kannst</b>. Falls Du mehr wissen willst, vereinbaren Wir gerne einen <b>Coffee-Call</b> und finden gemeinsam heraus, wo dein <b>Potential</b> liegt.
+            Wir haben dir deine Case Study per E-Mail geschickt. Steigere deinen Erfolg durch Funnels und mache einen unverbindlichen Coffee-Call in einer entspannten Umgebung mit uns aus. Wir zeigen dir, wie du durch <b>Funnels Potential schöpfst und deine Ziele erreichst</b>.
+        </div>
+        <div className="finish-button">
+            <button {...rest}>👋 Coffe-Call vereinbaren</button>
+        </div>
+        <div className="finish-headline">Wir schaffen Value</div>
+        <div className="list">
+            <div className="list-item">
+                <div className="list-icon">🤩</div>
+                <div className="list-text">
+                    <div><b>Mehr KundInnen</b></div>
+                    Durch Funnels generierst du passiv, also nebenbei, KundInnen.
+                </div>
+            </div>
+            <div className="list-item">
+                <div className="list-icon">💛</div>
+                <div className="list-text">
+                    <div><b>Mehr MitarbeiterInnen</b></div>
+                    Funnels helfen dir dein wichtigstes Asset zu vergrößern - dein Team.
+                </div>
+            </div>
+            <div className="list-item">
+                <div className="list-icon">💬</div>
+                <div className="list-text">
+                    <div><b>Authorität</b></div>
+                    Deine Brand gewinnt an Authorität - Du bist der Experte am Markt.
+                </div>
+            </div>
+            <div className="list-item">
+                <div className="list-icon">🤝</div>
+                <div className="list-text">
+                    <div><b>Loyale Kunden</b></div>
+                    Funnels helfen dir, Kunden langfrisitg zu halten und Profite zu maximieren.
+                </div>
+            </div>
         </div>
         <div className="finish-button">
             <button {...rest}>👋 Coffe-Call vereinbaren</button>
@@ -163,6 +204,11 @@ function Finish({ ...rest }) {
 function FinishPhone({ ...rest }) {
     return <div className="finish">
         <div className="finish-text text-align-left">
+            <h3 style={{ marginTop: "4rem" }}>Dauer:</h3>
+            <div>Wir können uns 30 min für dich Zeit nehmen.</div>
+            <h3 style={{ marginTop: "4rem" }}>Ablauf:</h3>
+            <div>Zur gebuchten Uhrzeit am gebuchten Tag rufen wir dich an - Du musst dich um nichts kümmern.</div>
+            <h3 style={{ marginTop: "4rem" }}>Agenda:</h3>
             <ul>
                 <li>Kennenlernen</li>
                 <li>Überblick über deine Brand</li>

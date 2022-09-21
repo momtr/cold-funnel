@@ -7,6 +7,10 @@
     height: 100vh;
 }
 
+.footer {
+    margin-top: 2rem !important;
+}
+
 .footer img {
     margin: 0 0 -1rem 0;
 }
@@ -201,10 +205,15 @@ button:hover {
     width: 80%;
 }
 
+.finish-headline {
+    margin-top: 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
 .text-align-left {
     text-align: left;
 }
-
 
 @keyframes card-in {
     from {
@@ -214,3 +223,37 @@ button:hover {
         opacity: 1;
     }
 }
+
+.list {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    max-width: 80%;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.list-icon {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    margin-top: .5rem;
+}
+
+.list-text {
+    text-align: left;
+}
+
+.question.in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.question {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity .25s ease, transform .25s ease;
+  }
