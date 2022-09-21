@@ -13,7 +13,7 @@ import s9 from "../assets/images/s9.png";
 import s10 from "../assets/images/s10.png";
 import f1 from "../assets/images/f1.png";
 import f2 from "../assets/images/f2.png";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const stages = [
     { 
@@ -123,7 +123,7 @@ export default function ColdFunnel() {
                         {
                             stages[stage].type === "QUESTION" && <div className="cards">
                                 {stages[stage].answers?.map((answer, id) => (
-                                    <Card image={answer.image} text={answer.text} onClick={next} />
+                                    <Card key={id} image={answer.image} text={answer.text} onClick={next} />
                                 ))}
                             </div>
                         }
@@ -174,9 +174,9 @@ function FinishPhone({ ...rest }) {
     </div>
 }
 
-function Card({ image, text, onClick, ...rest }: { image: string, text: string, onClick: Function }) {
+function Card({ image, text, onClick, ...rest }: { image: string, text: string, onClick: React.MouseEventHandler<HTMLDivElement> }) {
     return (
-        <div className="card" { ...rest }>
+        <div className="card" onClick={onClick}>
             <div className="card-image">
                 <img src={image} width="100%" />
             </div>
@@ -214,7 +214,7 @@ function ContactForm({ ...rest }) {
     )
 }
 
-function PhoneForm({ stage, onClick, ...rest }: { stage: number, onClick: Function }) {
+function PhoneForm({ stage, onClick, ...rest }: { stage: number, onClick: React.MouseEventHandler<HTMLButtonElement> }) {
     return (
         <div className="form">
             <div className="input input-top">
@@ -227,13 +227,13 @@ function PhoneForm({ stage, onClick, ...rest }: { stage: number, onClick: Functi
                     <option value="" disabled selected>Termin wählen</option>
                     {
                         stages[stage].available_appointments?.map((app, key) => (
-                            <option value={app.date}>{app.date}</option>
+                            <option key={key} value={app.date}>{app.date}</option>
                         ))
                     }
                 </select>
             </div>
             <div className="form-button">
-                <button {...rest}>Gratis Coffee-Call buchen</button>
+                <button onClick={onClick}>Gratis Coffee-Call buchen</button>
             </div>
             <div className="form-disclaimer">
                 Der Termin gehört Dir! Wir melden uns an deinem ausgwählten Termin bei dir. 
