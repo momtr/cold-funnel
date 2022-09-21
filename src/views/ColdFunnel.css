@@ -90,11 +90,13 @@
     font-family: Inter, sans-serif;
     font-size: 1.1rem;
     width: 100%;
+    -webkit-appearance: none
 }
 
 option {
     font-family: Inter, sans-serif;
     color: #D8D8D8;
+    -webkit-appearance: none
 }
 
 input:focus {
