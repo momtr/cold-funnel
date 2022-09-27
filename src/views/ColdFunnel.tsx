@@ -230,10 +230,10 @@ export default function ColdFunnel() {
 function Finish({ ...rest }) {
     return <div className="finish">
         <div className="finish-text">
-            Wir haben dir deine Case Study per E-Mail geschickt. Steigere deinen Erfolg durch Funnels und mache einen unverbindlichen Coffee-Call in einer entspannten Umgebung mit uns aus. Wir zeigen dir, wie du durch <b>Funnels Potential schöpfst und deine Ziele erreichst</b>.
+            Wir erstellen Deine persönliche Analyse, wie Du Social Sales Funnels verwenden kannst, um das Potential deines Unternehmens, deiner Brand, optimal zu nutzen. <b>Melde Dich zu einem Coffee-Call an, um eine detaillierte Case-Study zu bekommen.</b>
         </div>
         <div className="finish-button">
-            <button {...rest}>👋 Coffee-Call vereinbaren</button>
+            <button {...rest}>☕️ Coffee-Call vereinbaren</button>
         </div>
         <div className="finish-headline">Wir schaffen Value</div>
         <div className="list">
@@ -267,7 +267,7 @@ function Finish({ ...rest }) {
             </div>
         </div>
         <div className="finish-button">
-            <button {...rest}>👋 Coffee-Call vereinbaren</button>
+            <button {...rest}>☕️ Coffee-Call vereinbaren</button>
         </div>
     </div>
 }
