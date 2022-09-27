@@ -9,10 +9,16 @@
 
 .footer {
     margin-top: 2rem !important;
+    background-color: #50C3C8;
+    padding: 1rem;
+    color: white;
+    font-size: .8rem;
+    text-align: center;
 }
 
 .footer img {
-    margin: 0 0 -1rem 0;
+    width: 8%;
+    margin: .5rem auto;
 }
 
 .nav {
@@ -47,12 +53,12 @@
     flex-wrap: wrap;
     max-width: 88%;
     margin: 2.5rem auto;
-    row-gap: .8rem;
-    column-gap: .8rem;
+    row-gap: .9rem;
+    column-gap: .9rem;
 }
 
 .card {
-    background-color: #FF0460;
+    background: linear-gradient(90deg, #50C3C8 0%, #2846C3 100%);
     color: white;
     border-radius: 12px;
     width: 48%;
@@ -60,7 +66,7 @@
 }
 
 .card-text {
-    padding: .5rem 1rem 1rem 1rem;
+    padding: 1.5rem 1rem 2rem 1rem;
     font-weight: 700;
 }
 
@@ -143,6 +149,7 @@ input::placeholder {
 .input-bottom {
     border: 1.5px solid #ECECEC;
     border-radius: 0px 0px 8px 8px;
+    justify-content: center;
 }
 
 .input-bottom-w {
@@ -165,17 +172,13 @@ input[type="checkbox"] {
 }
 
 button {
-    background-color: #FF0460;
+    background: linear-gradient(90deg, #50C3C8 0%, #2846C3 100%);
     color: #ffffff;
     border: none;
     border-radius: 8px;
     font-size: .85rem;
     font-weight: 700;
     padding: .9rem 2rem;
-}
-
-button:hover {
-    background-color: #fd73a5;
 }
 
 .form-button {
@@ -256,4 +259,21 @@ button:hover {
     opacity: 0;
     transform: translateY(15px);
     transition: opacity .25s ease, transform .25s ease;
-  }
+}
+
+a {
+    text-decoration: underline !important;
+}
+
+.footer a {
+    color: white !important;
+}
+
+.revenue {
+    margin: 2rem auto;
+    width: 30%;
+}
+
+.error-box {
+    border: 1px solid red;
+}

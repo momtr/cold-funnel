@@ -1,0 +1,18 @@
+.landing-screen {
+    margin: 0 auto;
+    max-width: 412px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+button {
+    background-color: #FF0460;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: .85rem;
+    font-weight: 700;
+    padding: .9rem 2rem;
+}

@@ -4,7 +4,7 @@ export default function useMountTransition(isMounted: Boolean, unmountDelay: num
     const [hasTransitionedIn, setHasTransitionedIn] = useState<Boolean>(false);
   
     useEffect(() => {
-      let timeoutId: number;
+      let timeoutId: any;
   
       if (isMounted && !hasTransitionedIn) {
         setHasTransitionedIn(true);
