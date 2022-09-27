@@ -325,7 +325,7 @@ function ContactForm({ callback, sessionId }: { callback: Function, sessionId: s
                     <div className="input-icon">
                         <input type="checkbox" {...register("privacy_approval", { required: true })} />
                     </div>
-                    <div className="input-text">Ich akzeptiere die <a href="https://oneup-web.com/data-privacy.html">Datenschutzbestimmungen</a></div>
+                    <div className="input-text">Ich akzeptiere die <a href="./Oneup_Datenschutzerklärung_27092022.pdf">Datenschutzbestimmungen</a></div>
                 </div>
                 <div className="form-button">
                     <button type="submit">Jetzt Case Study erhalten 👉</button>
