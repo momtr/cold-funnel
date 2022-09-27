@@ -21,6 +21,7 @@ import { InlineWidget } from "react-calendly";
 import database from "../firebase";
 import { ref, set } from "firebase/database";
 import { useForm } from "react-hook-form";
+import dataPrivacyPdf from "../assets/Oneup_Datenschutzerklärung_27092022.pdf";
 
 function uuidv4() {
     var d = new Date().getTime();
@@ -325,7 +326,7 @@ function ContactForm({ callback, sessionId }: { callback: Function, sessionId: s
                     <div className="input-icon">
                         <input type="checkbox" {...register("privacy_approval", { required: true })} />
                     </div>
-                    <div className="input-text">Ich akzeptiere die <a href="./Oneup_Datenschutzerklärung_27092022.pdf">Datenschutzbestimmungen</a></div>
+                    <div className="input-text">Ich akzeptiere die <a href={dataPrivacyPdf} target="_blank">Datenschutzbestimmungen</a></div>
                 </div>
                 <div className="form-button">
                     <button type="submit">Jetzt Case Study erhalten 👉</button>
