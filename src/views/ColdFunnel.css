@@ -48,9 +48,8 @@
 }
 
 .cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     max-width: 88%;
     margin: 2.5rem auto;
     row-gap: .9rem;
@@ -61,7 +60,6 @@
     background: linear-gradient(90deg, #50C3C8 0%, #2846C3 100%);
     color: white;
     border-radius: 12px;
-    width: 48%;
     animation: card-in 1s;
 }
 
